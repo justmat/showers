@@ -16,7 +16,7 @@ end
 
 
 local function draw_cloud()
-  screen.level(6)
+  screen.level(10)
   screen.circle(44, 30, 13)
   screen.fill()
   screen.circle(65, 26, 18)
