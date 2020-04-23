@@ -1,3 +1,10 @@
+-- a thunderstorm
+--         for norns
+-- ----------
+-- there are no controls,
+-- you can't control the
+-- weather.
+
 engine.name = "Showers"
 
 
@@ -5,7 +12,7 @@ function init()
   local count = 1
   -- screen metro
   screen_timer = metro.init()
-  screen_timer.time = 1/5
+  screen_timer.time = 1/15
   screen_timer.stage = 1
   screen_timer.event = function()
     count = count + 1
@@ -34,12 +41,22 @@ end
 local function draw_rain(n)
   if n then n = n + 1 end
   if n == 1 then
+    screen.move(32, 62)
+    screen.line_rel(-3, 6)
+    screen.move(80, 58)
+    screen.line_rel(-2, 4)
+    
     screen.move(44, 45)
     screen.line_rel(-5, 10)
     screen.move(80, 48)
     screen.line_rel(-5, 10)
   elseif n == 2 then
-    screen.move(42, 50)
+    screen.move(34, 56)
+    screen.line_rel(-2, 4)
+    screen.move(80, 58)
+    screen.line_rel(-2, 4)
+
+    screen.move(42, 58)
     screen.line_rel(-5, 10)
     screen.move(64, 46)
     screen.line_rel(-5, 10)
