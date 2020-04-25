@@ -43,7 +43,7 @@ local function draw_cloud()
   screen.fill()
   screen.level(0)
   screen.arc(80, 30, 14, -2, -1)
-  screen.move(66, 45)
+  screen.move(66, 47)
   screen.arc(65, 26, 18, 1, 2.7)
   screen.stroke()
 end
