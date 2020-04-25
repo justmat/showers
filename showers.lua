@@ -1,14 +1,17 @@
 -- a thunderstorm
 --         for norns
 -- ----------
--- there are no controls,
--- you can't control the
--- weather.
+--
+-- enc1 = vol
+--
+-- v1 @justmat
+--
 
 engine.name = "Showers"
 
 
 function init()
+  
   local count = 1
   -- screen metro
   screen_timer = metro.init()
@@ -19,6 +22,14 @@ function init()
     redraw(count % 4)
   end
   screen_timer:start()
+end
+
+
+function enc(n, d)
+  if n == 1 then
+    --volume
+    mix:delta("output", d)
+  end
 end
 
 
