@@ -11,7 +11,25 @@ engine.name = "Showers"
 
 
 function init()
-  
+
+  params:add_separator()
+
+  params:add {
+    type = 'control',
+    id = 'rain',
+    name = 'rain',
+    controlspec = controlspec.new(0, 1, "lin", 0.01, 0.3),
+    action = function(v) engine.rain(v) end
+    }
+
+  params:add {
+    type = 'control',
+    id = 'thunder',
+    name = 'thunder',
+    controlspec = controlspec.new(0, 1, "lin", 0.01, 0.5),
+    action = function(v) engine.thunder(v) end
+    }
+
   local count = 1
   -- screen metro
   screen_timer = metro.init()
@@ -29,6 +47,10 @@ function enc(n, d)
   if n == 1 then
     --volume
     mix:delta("output", d)
+  elseif n == 2 then
+    params:delta("rain", d)
+  elseif n == 3 then
+    params:delta("thunder", d)
   end
 end
 
