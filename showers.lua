@@ -46,7 +46,7 @@ end
 function enc(n, d)
   if n == 1 then
     --volume
-    mix:delta("output", d)
+    params:delta("output_level", d)
   elseif n == 2 then
     params:delta("rain", d)
   elseif n == 3 then
